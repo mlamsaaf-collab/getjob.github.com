@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workwith you - نظام التسويق بالعمولة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4e60d3;
+            --secondary: #8e59d7;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%234e60d3" opacity="0.1"/><path d="M0 0L100 100" stroke="%234e60d3" stroke-width="2" opacity="0.2"/></svg>');
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--dark);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 0;
+            background-color: #f5f7ff;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            text-align: center;
+            max-width: 250px;
+            margin: 1rem;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 10px 30px rgba(78, 96, 211, 0.2);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Workwith you</div>
+                <ul class="nav-links">
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">كيف يعمل</a></li>
+                    <li><a href="#">الأسعار</a></li>
+                    <li><a href="#">عن nosotros</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+                <a href="#" class="btn">تسجيل الدخول</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>اربح مع كل مشترك جديد في Workwith you</h1>
+            <p>انضم إلى نظام التسويق بالعمولة الخاص بنا وابدأ في جني الأرباح من خلال شبكتك. كل مشترك تجلبه يعني أرباح أكثر لك!</p>
+            <a href="#" class="btn">اشترك الآن</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">مميزات Workwith you</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>أرباح متعددة المستويات</h3>
+                    <p>احصل على نسبة من اشتراك الأعضاء الذين يجلبونهم أعضاء شبكتك حتى 20 مستوى.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>لوحة تحكم متكاملة</h3>
+                    <p>تابع أرباحك وشبكتك وإحصائياتك من خلال لوحة تحكم سهلة الاستخدام.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>دعم فني متكامل</h3>
+                    <p>فريق دعم فني متاح لمساعدتك في أي استفسار أو مشكلة تواجهك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">كيف يعمل النظام؟</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>أنشئ حسابك</h3>
+                    <p>قم بالتسجيل في الموقع واختر باقة الاشتراك المناسبة لك.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>انشر رابطك الخاص</h3>
+                    <p>استخدم رابط التسجيل الخاص بك لجلب أعضاء جدد إلى المنصة.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>اكسب العمولات</h3>
+                    <p>احصل على نسبة من اشتراك كل عضو جديد تدخله إلى المنصة.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>تابع أرباحك</h3>
+                    <p>شاهد أرباحك تنمو مع كل عضو جديد في شبكتك حتى 20 مستوى.</p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:2rem;">
+                <a href="https://github.com/" target="_blank" class="btn">شاهد المشروع على GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">باقات الاشتراك</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>الباقة الأساسية</h3>
+                    <div class="price">$50</div>
+                    <p>اشتراك شهري</p>
+                    <ul style="list-style: none; margin: 1.5rem 0;">
+                        <li>عمولة 10% على المستوى الأول</li>
+                        <li>عمولة 5% على المستوى الثاني</li>
+                        <li>دعم فني أساسي</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>الباقة المميزة</h3>
+                    <div class="price">$100</div>
+                    <p>اشتراك شهري</p>
+                    <ul style="list-style: none; margin: 1.5rem 0;">
+                        <li>عمولة 15% على المستوى الأول</li>
+                        <li>عمولة 10% على المستوى الثاني</li>
+                        <li>عمولة 5% على المستوى الثالث</li>
+                        <li>دعم فني مميز</li>
+                    </ul>
+                    <a href="#" class="btn">اشترك الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">Workwith you</div>
+            <ul class="footer-links">
+                <li><a href="#">الشروط والأحكام</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+                <li><a href="#">الأسئلة الشائعة</a></li>
+            </ul>
+            <p>© 2023 Workwith you. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Workwith you Website Loaded');
+        });
+    </script>
+</body>
+</html>
